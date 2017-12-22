@@ -1,0 +1,221 @@
+body {
+    background-color: #F5F5F5;
+    font-family: 'Candara';
+}
+
+
+/* Panel principal de la vista */
+
+#main {
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-color: #0099CC;
+    border-style: solid;
+    border-width: 30px 0px 3px 0px;
+}
+
+.panel-left {
+    width: 30%;
+    margin: 10px;
+    background-color: #FAFAFA;
+    float: left;
+}
+
+.panel-right {
+    width: 70%;
+    margin: 10px;
+    background-color: #FAFAFA;
+    float: left;
+}
+
+.panel-photo {
+    width: 40%;
+    margin: 10px auto;
+    border-radius: 200px;
+    border: 1px dashed black;
+    background-color: white;
+}
+
+.panel-photo img {
+    width: 94%;
+    margin: 3%;
+    border-radius: 200px;
+}
+
+.panel-name {
+    margin: 10px;
+}
+
+.panel-footer {
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    background-color: #F5F5F5;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.panel-tabs {
+    margin: 10px;
+    background-color: white;
+}
+
+.tab-content {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 20px 30px 20px;
+}
+
+.list-tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.list-tabs li {
+    float: left;
+}
+
+.list-tabs li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.list-tabs li a:hover {
+    background-color: #FAFAFA;
+}
+
+.tab-active {
+    border-width: 2px 0px 0px 0px;
+    border-style: solid;
+    border-color: #0099CC;
+}
+
+.tab-active a {
+    border-width: 0px 1px 0px 1px;
+    border-style: solid;
+    border-color: #FAFAFA;
+}
+
+.tab-inactive {
+    border-width: 0px;
+}
+
+.tab-inactive a {
+    border-width: 0px;
+}
+
+.tag {
+    margin: 10px 5px 10px 0px;
+    padding: 0px 4px;
+    border-radius: 5px;
+    color: white;
+    font-size: 10pt;
+    text-decoration: none;
+}
+
+.tag-success {
+    background-color: #009900;
+}
+
+.tag-primary {
+    background-color: #0099CC;
+}
+
+.tag-warning {
+    background-color: orange;
+}
+
+.tag-danger {
+    background-color: red;
+}
+
+.separator {
+    margin: 30px 10px 10px 10px;
+    border: 1px dashed black;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    margin: 3%;
+    width: 94%;
+    border-collapse: collapse;
+}
+
+table th {
+    margin: 20px;
+    padding: 10px;
+    background-color: #F2F2F2;
+}
+
+table td {
+    margin: 10px 20px;
+    padding: 10px;
+}
+
+table tr:hover {
+    background-color: #FAFAFA;
+}
+
+tr:nth-child(even) {
+    background-color: #FAFAFA;
+}
+
+.btn {
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 6px 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.say {
+    background-color: lightgray;
+    margin: 10px;
+    font-size: 11pt;
+    border-radius: 5px;
+}
+
+.say p {
+    padding: 10px;
+}
+
+.date {
+    min-width: 100px;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.map {
+    overflow-x: auto;
+    width: 100%;
+}
