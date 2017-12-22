@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Yilver Molina Hurtatiz</title>
@@ -10,6 +9,26 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="http://yilvermolinah.com/fotos/Foto_YilverMH.jpg" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        var habilidades = '{ "habilidades" : [' +
+            '{ "nombre":"Javascript" , "color":"primary" },' +
+            '{ "nombre":"C#" , "color":"success" },' +
+            '{ "nombre":"HTML" , "color":"primary" },' +
+            '{ "nombre":"Java" , "color":"success" },' +
+            '{ "nombre":"Ionic" , "color":"primary" },' +
+            '{ "nombre":"AngularJS" , "color":"success" },' +
+            '{ "nombre":"Typescript" , "color":"primary" } ]}';
+
+        var obj = JSON.parse(habilidades);
+        $(document).ready(function() {
+            var items = '';
+            $.each(obj.habilidades, function(key, val) {
+                items += "<span class='tag tag-" + val.color + "'>" + val.nombre + "</span>";
+            });
+            $("#tags").append(items);
+        });
+    </script>
 </head>
 
 <body>
@@ -18,7 +37,7 @@
             <div class="panel-photo">
                 <img src="http://yilvermolinah.com/fotos/Foto_YilverMH.jpg" alt="Foto" />
             </div>
-            <div class="panel-name text-center">
+            <div name="panel-name" class="text-center">
                 <hr/>
                 <h2>Yilver Estiven Molina Hurtatiz</h2>
                 <p>Desarrollador de Software</p>
@@ -41,31 +60,27 @@
         </div>
         <div class="panel-right">
             <div class="panel-tabs">
-                <ul class="list-tabs">
-                    <li class="tab-active" id="tab-info-general" onclick="activateTab(this.id, 'panel-info-general')"><a href="#">Sobre mí</a></li>
-                    <li class="tab-inactive" id="tab-formacion" onclick="activateTab(this.id, 'panel-formacion')"><a href="#">Formación</a></li>
-                    <li class="tab-inactive" id="tab-experiencia" onclick="activateTab(this.id, 'panel-experiencia')"><a href="#" onclick="activateTab()">Experiencia</a></li>
-                    <li class="tab-inactive" id="tab-publicaciones" onclick="activateTab(this.id, 'panel-publicaciones')"><a href="#" onclick="activateTab()">Publicaciones</a></li>
-                    <li class="tab-inactive" id="tab-contacto" onclick="activateTab(this.id, 'panel-contacto')"><a href="#" onclick="activateTab()">Contacto</a></li>
+                <ul id="list" class="list-tabs">
+                    <li class="tab-active" id="tab-info-general" onclick="activateTab('info-general')"><a href="#">Sobre mí</a></li>
+                    <li class="tab-inactive" id="tab-formacion" onclick="activateTab('formacion')"><a href="#">Formación</a></li>
+                    <li class="tab-inactive" id="tab-experiencia" onclick="activateTab('experiencia')"><a href="#" onclick="activateTab()">Experiencia</a></li>
+                    <li class="tab-inactive" id="tab-publicaciones" onclick="activateTab('publicaciones')"><a href="#" onclick="activateTab()">Publicaciones</a></li>
+                    <li class="tab-inactive" id="tab-contacto" onclick="activateTab('contacto')"><a href="#" onclick="activateTab()">Contacto</a></li>
                 </ul>
                 <div id="panel-info-general" class="tab-content">
                     <p class="text-justify">
                         Mi nombre es Yilver Molina, tengo 21 años y soy <b>Ingeniero de Sistemas</b>, egresado de la Universidad de la Amazonia, en Florencia, Caquetá, Colombia.
                         <br/><br/>Actualmente me desempeño como <b>Desarrollador de Software</b>, participando en la ejecución de proyectos multiplataforma (web y móvil).
-                        <br/><br/>Mi pasión es el Desarrollo de Software, generar soluciones innovadoras para hacer más eficiente una tarea.
+                        <br/><br/>Mi pasión es el <strong>Desarrollo de Software</strong>, generar soluciones innovadoras para hacer más eficiente una tarea.
                     </p>
                     <div>
                         <br/>
                         <p class="text-justify">
-                            Mis <b>habilidades</b>:
+                            <bdo dir="ltr">Mis <b>habilidades</b>:</bdo>
                         </p>
-                        <span class="tag tag-primary">Javascript</span>
-                        <span class="tag tag-success">C#</span>
-                        <span class="tag tag-primary">HTML</span>
-                        <span class="tag tag-success">Java</span>
-                        <span class="tag tag-primary">Ionic</span>
-                        <span class="tag tag-success">AngularJS</span>
-                        <span class="tag tag-primary">Typescript</span>
+                        <div id="tags">
+
+                        </div>
                     </div>
                 </div>
                 <div id="panel-formacion" class="tab-content" hidden="hidden">
@@ -81,7 +96,7 @@
                             <br/><span class="tag tag-success">Finalizado</span> <br/><br/>
                         </li>
                         <li>
-                            Diplomado: APRENDIZAJE EN INGLÉS: VOCABULARIO, ESTRUCTURA GRAMATICAL Y COMPRENSIÓN PARA LA PARTICIPACIÓN EN LAS MARATONES DE PROGRAMACIÓN NACIONALES,.
+                            Diplomado: APRENDIZAJE EN INGLÉS: VOCABULARIO, ESTRUCTURA GRAMATICAL Y COMPRENSIÓN PARA LA PARTICIPACIÓN EN LAS MARATONES DE PROGRAMACIÓN NACIONALES.
                             <i>Universidad de la Amazonia, 2016.</i> Florencia, Caquetá, Colombia.
                             <br/><span class="tag tag-success">Finalizado</span> <br/><br/>
                         </li>
@@ -99,7 +114,7 @@
                 </div>
                 <div id="panel-experiencia" class="tab-content" hidden="hidden">
                     <div class="table-responsive">
-                        <table class="text-justify">
+                        <table id="tabla-experiencia" class="text-justify">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -135,7 +150,7 @@
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>El Independiente - Guía Telefónica Comercial del Caquetá<i>Florencia, Caquetá, Colombia</i></td>
+                                    <td>El Independiente - Guía Telefónica Comercial del Caquetá - <i>Florencia, Caquetá, Colombia</i></td>
                                     <td>Desarrollador Web y Móvil</td>
                                     <td><span class="tag tag-primary">Jun - Oct 2016</span></td>
                                 </tr>
@@ -190,7 +205,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <i class="fa fa-envelope icon"></i> yestiben-19@hotmail.com
+                                        <i class="fa fa-envelope icon"></i> <a href="mailto:yestiben-19@hotmail.com"> yestiben-19@hotmail.com</a>
                                     </td>
                                     <td>
                                         <i class="fa fa-phone icon"></i>(095) 345 - 5645
@@ -218,20 +233,21 @@
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
-        var activateTab = function(id_tab, id_panel) {
-            var panels = ["panel-info-general", "panel-formacion", "panel-experiencia", "panel-publicaciones", "panel-contacto"];
-            var tabs = ["tab-info-general", "tab-formacion", "tab-experiencia", "tab-publicaciones", "tab-contacto"];
-            for (var i = 0; i < panels.length; i++) {
-                document.getElementById(panels[i]).style.display = panels[i] === id_panel ? "block" : "none";
+        var activateTab = function(name) {
+            //array de los tabs que se han agregado a la página
+            var names = ["info-general", "formacion", "experiencia", "publicaciones", "contacto"];
+            for (var i = 0; i < names.length; i++) {
 
-                var gh = document.getElementById(panels[i]);
+                //hacer visible el panel que corresponde al tab que se ha activado, y los demás colocarlos no visibles.
+                document.getElementById("panel-" + names[i]).style.display = names[i] === name ? "block" : "none";
 
-                if (id_tab === tabs[i]) {
-                    $("#" + tabs[i]).removeClass('tab-inactive');
-                    $("#" + tabs[i]).addClass('tab-active');
-                } else {
-                    $("#" + tabs[i]).removeClass('tab-active');
-                    $("#" + tabs[i]).addClass('tab-inactive');
+                //con jQuery agregar o quitar los estilos a los tabs
+                if (name === names[i]) { // si es el tab que se ha activado, quitar el estilo de tab inactivo (si lo tiene) y agregar el estilo de tab activo.
+                    $("#tab-" + names[i]).removeClass('tab-inactive');
+                    $("#tab-" + names[i]).addClass('tab-active');
+                } else { // si no es el tab que se ha activado, quitar el estilo de tab activo (si lo tiene) y agregar el estilo de tab inactivo.
+                    $("#tab-" + names[i]).removeClass('tab-active');
+                    $("#tab-" + names[i]).addClass('tab-inactive');
                 }
             }
         }
